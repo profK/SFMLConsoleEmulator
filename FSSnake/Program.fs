@@ -18,6 +18,7 @@ type GameState = {
     Snake: (int * int) list
     Food: int * int
     Score: int
+    Collision: bool
 }
 
 
@@ -26,6 +27,7 @@ let mutable gameState = {
     Snake= [(Console.WindowWidth/2, Console.WindowHeight/2)]
     Food= (0,0)
     Score= 0
+    Collision = false 
 }
 
 let Controls = [
@@ -83,16 +85,35 @@ let moveSnake gstate =
     {gstate with Snake = newsnake}
 
 
-        
+let  checkCollision gstate =
+    if gstate.Snake.Head = (0, 0) || gstate.Snake.Head = (Console.WindowWidth-1, 0) || gstate.Snake.Head = (0, Console.WindowHeight-1) || gstate.Snake.Head = (Console.WindowWidth-1, Console.WindowHeight-1) then
+        {gstate with Collision = true}
+    else if List.tail gstate.Snake |> List.contains gstate.Snake.Head then
+        {gstate with Collision = true}
+    else
+        gstate
+ 
+let drawGameState gstate =
+    Console.SetCursorPosition(fst gstate.Food, snd gstate.Food)
+    Console.Write("O")
+    gstate.Snake
+    |> List.iter (fun (x, y) ->
+        Console.SetCursorPosition(x, y)
+        Console.Write("X") )
+    Console.SetCursorPosition (0, Console.WindowHeight)
+    Console.Write ("Score: " + gstate.Score.ToString())
 
 [<EntryPoint>]
 let main argv =
     Console.SetWindowSize(80, 80)
     Console.CursorVisible <- false
-    while running do
+    while not gameState.Collision do
        Console.Clear()
        Console.SetCursorPosition(0, 0)
        drawBorder()
+       gameState <-
+           gameState |> moveSnake |> checkCollision |> tryEat
+       drawGameState gameState
        Console.Display()
        Thread.Sleep(100)
     0     
