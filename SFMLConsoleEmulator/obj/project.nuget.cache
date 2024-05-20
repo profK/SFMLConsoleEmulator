@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "C6dLlHRROAwtUDX3Apg5A1V2WAmXm/wbxl3Z8SBNXVHYw28dngPZoXvJgAFoFz0X10uIhhJi/SJxsT2b3KUeVg==",
+  "success": true,
+  "projectFilePath": "D:\\projects\\RiderProjects\\FSSnake\\SFMLConsoleEmulator\\SFMLConsoleEmulator.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jpkessel\\.nuget\\packages\\csfml\\2.5.2\\csfml.2.5.2.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\8.0.102\\fsharp.core.8.0.102.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\sfml.audio\\2.5.1\\sfml.audio.2.5.1.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\sfml.graphics\\2.5.1\\sfml.graphics.2.5.1.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\sfml.net\\2.5.1\\sfml.net.2.5.1.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\sfml.system\\2.5.1\\sfml.system.2.5.1.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\sfml.window\\2.5.1\\sfml.window.2.5.1.nupkg.sha512"
+  ],
+  "logs": []
+}

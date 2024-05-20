@@ -1,0 +1,14 @@
+D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\bin\Debug\net8.0\SFMLConsoleEmulator.deps.json
+D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\bin\Debug\net8.0\SFMLConsoleEmulator.dll
+D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\bin\Debug\net8.0\SFMLConsoleEmulator.pdb
+D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\bin\Debug\net8.0\SFMLConsoleEmulator.xml
+D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\obj\Debug\net8.0\SFMLConsoleEmulator.fsproj.AssemblyReference.cache
+D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\obj\Debug\net8.0\SFMLConsoleEmulator.AssemblyInfoInputs.cache
+D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\obj\Debug\net8.0\SFMLConsoleEmulator.AssemblyInfo.fs
+D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\obj\Debug\net8.0\SFMLConsoleEmulator.fsproj.CoreCompileInputs.cache
+D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\obj\Debug\net8.0\SFMLConsoleEmulator.dll
+D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\obj\Debug\net8.0\refint\SFMLConsoleEmulator.dll
+D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\obj\Debug\net8.0\SFMLConsoleEmulator.xml
+D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\obj\Debug\net8.0\SFMLConsoleEmulator.pdb
+D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\obj\Debug\net8.0\ref\SFMLConsoleEmulator.dll
+D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\bin\Debug\net8.0\Courier Prime.ttf
