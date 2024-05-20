@@ -6,7 +6,7 @@ open SFML.Window
 
 
 module public Console =
-    let mutable window = new RenderWindow(VideoMode(800u, 600u), "Console")
+    let mutable window = new PollableRenderWindow(VideoMode(800u, 600u), "Console")
     let mutable cursorPosition = new Vector2u(0u, 0u)
     let font = new Font("Courier Prime.ttf")
     
@@ -45,5 +45,29 @@ module public Console =
       // Display must be called at the end of the frame in order to see the results
     let Display() =    
         window.Display()
+      
+    let mutable keybuffer = []
+    let UpdateEvents() =
+        window.PollAllEvents()
+        |> Seq.iter (fun (evt:Event) ->
+            match evt.Type with
+            | EventType.Closed -> window.Close()
+            | EventType.TextEntered  -> keybuffer <-evt.Text.Unicode :: keybuffer |> ignore
+            | _ -> ())
+        
+    let KeyAvailable() =
+        UpdateEvents()
+        if keybuffer.Length > 0 then true else false
+        
+    //This currently spin locks, but it could and probably should  be changed to use a wait handle
+    let ReadKey() =
+        while not (KeyAvailable()) do
+            UpdateEvents
+        let key = keybuffer.Head
+        keybuffer <- keybuffer.Tail
+        key
+
+            
+        
         
 

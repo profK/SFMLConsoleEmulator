@@ -6,6 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="PollableRenderWindow.fs" />
         <Compile Include="Library.fs"/>
         <Compile Include="ConsoleEmulator.fs" />
         <Content Include="Courier Prime.ttf">

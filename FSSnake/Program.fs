@@ -92,6 +92,13 @@ let  checkCollision gstate =
         {gstate with Collision = true}
     else
         gstate
+        
+let doInput gstate =
+    if Console.KeyAvailable then
+        let key = Console.ReadKey().Key
+        match Controls |> List.tryFind (fun (k, _) -> k = key) with
+        | Some (_, dir) -> {gstate with Direction = dir}
+        | None -> gstate        
  
 let drawGameState gstate =
     Console.SetCursorPosition(fst gstate.Food, snd gstate.Food)
