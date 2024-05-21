@@ -203,3 +203,4 @@ D:\projects\RiderProjects\FSSnake\FSSnake\bin\Debug\net8.0\Courier Prime.ttf
 D:\projects\RiderProjects\FSSnake\FSSnake\bin\Debug\net8.0\SFMLConsoleEmulator.dll
 D:\projects\RiderProjects\FSSnake\FSSnake\bin\Debug\net8.0\SFMLConsoleEmulator.pdb
 D:\projects\RiderProjects\FSSnake\FSSnake\bin\Debug\net8.0\SFMLConsoleEmulator.xml
+D:\projects\RiderProjects\FSSnake\FSSnake\obj\Debug\net8.0\FSSnake.sourcelink.json

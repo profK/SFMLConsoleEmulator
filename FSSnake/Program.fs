@@ -31,10 +31,10 @@ let mutable gameState = {
 }
 
 let Controls = [
-    ConsoleKey.LeftArrow, (-1, 0);
-    ConsoleKey.RightArrow, (1, 0);
-    ConsoleKey.UpArrow, (0, -1);
-    ConsoleKey.DownArrow, (0, 1)
+    uint32 ConsoleKey.LeftArrow, (-1, 0);
+    uint32 ConsoleKey.RightArrow, (1, 0);
+    uint32 ConsoleKey.UpArrow, (0, -1);
+    uint32 ConsoleKey.DownArrow, (0, 1)
 ]
 
 let drawBorder () =
@@ -93,13 +93,15 @@ let  checkCollision gstate =
     else
         gstate
         
-let doInput gstate =
-    if Console.KeyAvailable then
-        let key = Console.ReadKey().Key
+let doInput gstate : GameState =
+    if Console.KeyAvailable() then
+        let key = Console.ReadKey()
+        printfn $" keycode: %A{key}" 
         match Controls |> List.tryFind (fun (k, _) -> k = key) with
         | Some (_, dir) -> {gstate with Direction = dir}
-        | None -> gstate        
- 
+        | None -> gstate
+    else
+        gstate
 let drawGameState gstate =
     Console.SetCursorPosition(fst gstate.Food, snd gstate.Food)
     Console.Write("O")
@@ -109,6 +111,8 @@ let drawGameState gstate =
         Console.Write("X") )
     Console.SetCursorPosition (0, Console.WindowHeight)
     Console.Write ("Score: " + gstate.Score.ToString())
+    
+
 
 [<EntryPoint>]
 let main argv =
@@ -119,7 +123,7 @@ let main argv =
        Console.SetCursorPosition(0, 0)
        drawBorder()
        gameState <-
-           gameState |> moveSnake |> checkCollision |> tryEat
+           gameState |> doInput |> moveSnake |> checkCollision |> tryEat
        drawGameState gameState
        Console.Display()
        Thread.Sleep(100)

@@ -12,3 +12,4 @@ D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\obj\Debug\net8.0\SFMLConso
 D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\obj\Debug\net8.0\SFMLConsoleEmulator.pdb
 D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\obj\Debug\net8.0\ref\SFMLConsoleEmulator.dll
 D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\bin\Debug\net8.0\Courier Prime.ttf
+D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulator\obj\Debug\net8.0\SFMLConsoleEmulator.sourcelink.json

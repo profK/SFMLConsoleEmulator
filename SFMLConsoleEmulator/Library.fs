@@ -47,13 +47,16 @@ module public Console =
         window.Display()
       
     let mutable keybuffer = []
-    let UpdateEvents() =
+    let UpdateEvents() : unit =
         window.PollAllEvents()
         |> Seq.iter (fun (evt:Event) ->
             match evt.Type with
             | EventType.Closed -> window.Close()
-            | EventType.TextEntered  -> keybuffer <-evt.Text.Unicode :: keybuffer |> ignore
-            | _ -> ())
+            | EventType.TextEntered  -> keybuffer <-evt.Text.Unicode :: keybuffer
+            | EventType.KeyReleased  -> keybuffer <-evt.Text.Unicode :: keybuffer 
+            | _ -> ()
+           ) 
+        
         
     let KeyAvailable() =
         UpdateEvents()
@@ -62,7 +65,7 @@ module public Console =
     //This currently spin locks, but it could and probably should  be changed to use a wait handle
     let ReadKey() =
         while not (KeyAvailable()) do
-            UpdateEvents
+            UpdateEvents()
         let key = keybuffer.Head
         keybuffer <- keybuffer.Tail
         key
