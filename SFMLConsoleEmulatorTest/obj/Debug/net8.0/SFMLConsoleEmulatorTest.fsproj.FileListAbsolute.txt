@@ -203,3 +203,4 @@ D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulatorTest\obj\Debug\net8.0\SFMLC
 D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulatorTest\obj\Debug\net8.0\SFMLConsoleEmulatorTest.genruntimeconfig.cache
 D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulatorTest\obj\Debug\net8.0\ref\SFMLConsoleEmulatorTest.dll
 D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulatorTest\bin\Debug\net8.0\Courier Prime.ttf
+D:\projects\RiderProjects\FSSnake\SFMLConsoleEmulatorTest\obj\Debug\net8.0\SFMLConsoleEmulatorTest.sourcelink.json

@@ -52,8 +52,8 @@ module public Console =
         |> Seq.iter (fun (evt:Event) ->
             match evt.Type with
             | EventType.Closed -> window.Close()
-            | EventType.TextEntered  -> keybuffer <-evt.Text.Unicode :: keybuffer
-            | EventType.KeyReleased  -> keybuffer <-evt.Text.Unicode :: keybuffer 
+            | EventType.TextEntered  -> keybuffer <-(uint32)evt.Key.Code :: keybuffer
+            | EventType.KeyReleased  -> keybuffer <-(uint32)evt.Key.Code :: keybuffer 
             | _ -> ()
            ) 
         

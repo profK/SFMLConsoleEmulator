@@ -6,6 +6,7 @@
 module FSSnake      
 open System
 open System.Threading
+open SFML.Window
 open SFMLConsoleEmulator
 
 
@@ -30,11 +31,13 @@ let mutable gameState = {
     Collision = false 
 }
 
+//Note: The console emulator returns scan codes, not VK codes like the console API
+// so we use the SFML map instead of ConsoleKey
 let Controls = [
-    uint32 ConsoleKey.LeftArrow, (-1, 0);
-    uint32 ConsoleKey.RightArrow, (1, 0);
-    uint32 ConsoleKey.UpArrow, (0, -1);
-    uint32 ConsoleKey.DownArrow, (0, 1)
+    uint32 Keyboard.Key.Left, (-1, 0);
+    uint32 Keyboard.Key.Right, (1, 0);
+    uint32 Keyboard.Key.Up, (0, -1);
+    uint32 Keyboard.Key.Down, (0, 1)
 ]
 
 let drawBorder () =
