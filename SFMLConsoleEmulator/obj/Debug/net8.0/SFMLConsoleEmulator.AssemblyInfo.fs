@@ -10,7 +10,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("SFMLConsoleEmulator")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+520a6e3a8f3d0f3d15b57477c5de9de60a6740cf")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3dcb9787415b3fd0dcf147ed73d694056ae3a4b")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("SFMLConsoleEmulator")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("SFMLConsoleEmulator")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]

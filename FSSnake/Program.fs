@@ -20,6 +20,7 @@ type GameState = {
     Food: int * int
     Score: int
     Collision: bool
+    Message: string
 }
 
 
@@ -28,7 +29,8 @@ let mutable gameState = {
     Snake= [(Console.WindowWidth/2, Console.WindowHeight/2)]
     Food= (0,0)
     Score= 0
-    Collision = false 
+    Collision = false
+    Message = ""
 }
 
 //Note: The console emulator returns scan codes, not VK codes like the console API
@@ -92,9 +94,9 @@ let moveSnake gstate =
 let  checkCollision gstate =
     if (fst gstate.Snake.Head)=0 || (fst gstate.Snake.Head) = Console.WindowWidth-1 ||
        (snd gstate.Snake.Head) =  0 || (snd gstate.Snake.Head) = Console.WindowHeight-3 then
-        {gstate with Collision = true}
+        {gstate with Collision = true; Message = "Collided with wall" }
     else if List.tail gstate.Snake |> List.contains gstate.Snake.Head then
-        {gstate with Collision = true}
+        {gstate with Collision = true; Message = "Collided with self"}
     else
         gstate
         
@@ -133,4 +135,11 @@ let main argv =
        drawGameState gameState
        Console.Display()
        Thread.Sleep(100)
+    let messageLength = gameState.Message.Length
+    Console.SetCursorPosition((Console.WindowWidth/2)-(messageLength/2), Console.WindowHeight/2)
+    Console.Write(gameState.Message)
+    Console.SetCursorPosition((Console.WindowWidth/2)-4, (Console.WindowHeight/2)+2)
+    Console.Write("GAME OVER")
+    Console.Display()
+    Thread.Sleep(10*1000)
     0     

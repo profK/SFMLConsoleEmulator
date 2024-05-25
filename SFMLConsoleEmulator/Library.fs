@@ -14,7 +14,7 @@ module public Console =
     let textSize =
         let wtxt = new Text("W", font, 12u)
         let bounds = wtxt.GetLocalBounds()
-        (uint32 (bounds.Width), uint32 (bounds.Height))
+        (uint32 (bounds.Width), uint32 (bounds.Height)+(uint32)wtxt.LineSpacing)
       // this is a bit ugly but is here to preserve the behavior of the original Console API
     // in F# these should really be functions so they recalculate when called
     let mutable WindowWidth:int =
