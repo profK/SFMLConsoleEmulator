@@ -47,21 +47,21 @@ let drawBorder () =
     Console.Write("+")
     Console.SetCursorPosition(0, Console.WindowHeight-2)
     Console.Write("+")
-    Console.SetCursorPosition(Console.WindowWidth-1, Console.WindowHeight-2)
+    Console.SetCursorPosition(Console.WindowWidth-1, Console.WindowHeight-3)
     Console.Write("+")
     for i in 1..(Console.WindowWidth-2) do
         Console.SetCursorPosition(i, 0)
         Console.Write("-")
-        Console.SetCursorPosition(i, Console.WindowHeight-2)
+        Console.SetCursorPosition(i, Console.WindowHeight-3)
         Console.Write("-")
-    for i in 1..(Console.WindowHeight-2) do
+    for i in 1..(Console.WindowHeight-3) do
         Console.SetCursorPosition(0, i)
         Console.Write("|")
         Console.SetCursorPosition(Console.WindowWidth-1, i)
         Console.Write("|")
 
 let rec generateFood gstate  =
-    let loc = (random.Next(1, Console.WindowWidth-2), random.Next(1, Console.WindowHeight-2))
+    let loc = (random.Next(1, Console.WindowWidth-2), random.Next(1, Console.WindowHeight-4))
     if List.contains loc gstate.Snake then
         generateFood gstate 
     else
@@ -90,7 +90,8 @@ let moveSnake gstate =
 
 
 let  checkCollision gstate =
-    if gstate.Snake.Head = (0, 0) || gstate.Snake.Head = (Console.WindowWidth-1, 0) || gstate.Snake.Head = (0, Console.WindowHeight-1) || gstate.Snake.Head = (Console.WindowWidth-1, Console.WindowHeight-1) then
+    if (fst gstate.Snake.Head)=0 || (fst gstate.Snake.Head) = Console.WindowWidth-1 ||
+       (snd gstate.Snake.Head) =  0 || (snd gstate.Snake.Head) = Console.WindowHeight-3 then
         {gstate with Collision = true}
     else if List.tail gstate.Snake |> List.contains gstate.Snake.Head then
         {gstate with Collision = true}
@@ -113,7 +114,7 @@ let drawGameState gstate =
     |> List.iter (fun (x, y) ->
         Console.SetCursorPosition(x, y)
         Console.Write("X") )
-    Console.SetCursorPosition (0, Console.WindowHeight)
+    Console.SetCursorPosition (0, Console.WindowHeight-2)
     Console.Write ("Score: " + gstate.Score.ToString())
     
 
