@@ -4,8 +4,6 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSSnake", "FSSnake\FSSnake.
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SFMLConsoleEmulator", "SFMLConsoleEmulator\SFMLConsoleEmulator.fsproj", "{3AB1171F-8D41-4C07-BB97-D2A1258B89D6}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SFMLConsoleEmulatorTest", "SFMLConsoleEmulatorTest\SFMLConsoleEmulatorTest.fsproj", "{6E17895A-482C-41A6-8726-2796F2B2A898}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,9 +18,5 @@ Global
 		{3AB1171F-8D41-4C07-BB97-D2A1258B89D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AB1171F-8D41-4C07-BB97-D2A1258B89D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AB1171F-8D41-4C07-BB97-D2A1258B89D6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6E17895A-482C-41A6-8726-2796F2B2A898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E17895A-482C-41A6-8726-2796F2B2A898}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E17895A-482C-41A6-8726-2796F2B2A898}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E17895A-482C-41A6-8726-2796F2B2A898}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
