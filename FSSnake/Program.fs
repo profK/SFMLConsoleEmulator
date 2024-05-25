@@ -81,10 +81,11 @@ let tryEat gstate =
         gstate
 
 let moveSnake gstate =
+    let newHeadX = (fst gstate.Snake.Head) + (fst gstate.Direction)
+    let newHeadY = (snd gstate.Snake.Head) + (snd gstate.Direction)
+
     let newsnake =
-        gstate.Snake
-        |>List.map (fun (x, y) ->
-            (x + (gstate.Direction |> fst) , y + (gstate.Direction |> snd )))
+        (newHeadX,newHeadY)::(gstate.Snake[0..(gstate.Snake.Length)-2])
     {gstate with Snake = newsnake}
 
 
@@ -121,6 +122,7 @@ let drawGameState gstate =
 let main argv =
     Console.SetWindowSize(80, 80)
     Console.CursorVisible <- false
+    gameState <- generateFood gameState
     while not gameState.Collision do
        Console.Clear()
        Console.SetCursorPosition(0, 0)

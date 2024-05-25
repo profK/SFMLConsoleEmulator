@@ -10,7 +10,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("FSSnake")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+520a6e3a8f3d0f3d15b57477c5de9de60a6740cf")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc348421b5b48f0883eabc0c8e90fbb312a2fc6c")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("FSSnake")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("FSSnake")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]
