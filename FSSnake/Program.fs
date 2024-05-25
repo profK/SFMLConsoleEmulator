@@ -45,14 +45,14 @@ let drawBorder () =
     Console.Write("+")
     Console.SetCursorPosition(Console.WindowWidth-1, 0)
     Console.Write("+")
-    Console.SetCursorPosition(0, Console.WindowHeight-1)
+    Console.SetCursorPosition(0, Console.WindowHeight-2)
     Console.Write("+")
-    Console.SetCursorPosition(Console.WindowWidth-1, Console.WindowHeight-1)
+    Console.SetCursorPosition(Console.WindowWidth-1, Console.WindowHeight-2)
     Console.Write("+")
     for i in 1..(Console.WindowWidth-2) do
         Console.SetCursorPosition(i, 0)
         Console.Write("-")
-        Console.SetCursorPosition(i, Console.WindowHeight-1)
+        Console.SetCursorPosition(i, Console.WindowHeight-2)
         Console.Write("-")
     for i in 1..(Console.WindowHeight-2) do
         Console.SetCursorPosition(0, i)
