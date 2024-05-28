@@ -14,17 +14,17 @@ module public Console =
     let textSize =
         let wtxt = new Text("W", font, 12u)
         let bounds = wtxt.GetLocalBounds()
-        (uint32 (bounds.Width), uint32 (bounds.Height)+(uint32)wtxt.LineSpacing)
+        (bounds.Width, bounds.Height+wtxt.LineSpacing)
       // this is a bit ugly but is here to preserve the behavior of the original Console API
     // in F# these should really be functions so they recalculate when called
     let mutable WindowWidth:int =
-        int (window.Size.X / fst textSize)
+        int ((float32 window.Size.X) / (fst textSize))
     let mutable WindowHeight:int =
-        int (window.Size.Y / snd textSize)    
+        int ((float32 window.Size.Y) / snd textSize)   
     let SetPixelSize (width, height) =
         window.Size <- new Vector2u(width, height)
-        WindowHeight <- int (window.Size.Y / snd textSize)
-        WindowWidth <-  int (window.Size.X / fst textSize)
+        WindowHeight <- int (float32 window.Size.Y / snd textSize)
+        WindowWidth <-  int (float32 window.Size.X / fst textSize)
     let SetWindowSize (columns:int, rows:int) =
         let width = columns * int (fst textSize)
         let height = rows * int (snd textSize)
@@ -35,8 +35,8 @@ module public Console =
         
     let Write (text:string) =
         let txt = new Text(text, font, 12u)
-        let x=float32 (cursorPosition.X * (fst textSize))
-        let y = float32 ((cursorPosition.Y * (snd textSize)) )
+        let x=float32 (float32 cursorPosition.X * (fst textSize))
+        let y = float32 (float32 cursorPosition.Y * (snd textSize)) 
         txt.Position <- Vector2f(x,y)
         txt.Origin <- Vector2f(0.0f, 0.0f)
         window.Draw(txt)

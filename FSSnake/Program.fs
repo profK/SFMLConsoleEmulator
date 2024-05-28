@@ -1,6 +1,7 @@
 ﻿// This is a .NET implementation of the console game snake.
-// The game is written in F# and uses the .NET Console API for input and output.
-// The game is a simple implementation of the classic snake game where the player controls a snake that grows in length as it eats food.
+// The game is written in F# and uses an emulation of the console API to do input and output.
+// The game is a simple implementation of the classic snake game where the player controls a snake
+// that grows in length as it eats food.
 // The player loses if the snake runs into the walls or itself.
 // The player can control the snake with the arrow keys.
 module FSSnake      
@@ -103,7 +104,6 @@ let  checkCollision gstate =
 let doInput gstate : GameState =
     if Console.KeyAvailable() then
         let key = Console.ReadKey()
-        printfn $" keycode: %A{key}" 
         match Controls |> List.tryFind (fun (k, _) -> k = key) with
         | Some (_, dir) -> {gstate with Direction = dir}
         | None -> gstate
@@ -123,23 +123,24 @@ let drawGameState gstate =
 
 [<EntryPoint>]
 let main argv =
-    Console.SetWindowSize(80, 80)
+    // Steup
+    Console.SetWindowSize (80,  80)
     Console.CursorVisible <- false
     gameState <- generateFood gameState
     while not gameState.Collision do
-       Console.Clear()
-       Console.SetCursorPosition(0, 0)
-       drawBorder()
-       gameState <-
+       Console.Clear() //clear last frame draws
+       drawBorder() // draw the border to the new frame
+       gameState <- // calculate the new game state
            gameState |> doInput |> moveSnake |> checkCollision |> tryEat
-       drawGameState gameState
-       Console.Display()
-       Thread.Sleep(100)
+       drawGameState gameState //draw the new game state to the screen
+       Console.Display() //show the new frame
+       Thread.Sleep(100) //wait for 1/10th of a second before the next frame
+    //Draw the end of game screen   
     let messageLength = gameState.Message.Length
     Console.SetCursorPosition((Console.WindowWidth/2)-(messageLength/2), Console.WindowHeight/2)
     Console.Write(gameState.Message)
     Console.SetCursorPosition((Console.WindowWidth/2)-4, (Console.WindowHeight/2)+2)
     Console.Write("GAME OVER")
     Console.Display()
-    Thread.Sleep(10*1000)
+    Thread.Sleep(10*1000) //display end of game screen for 10 seconds before exiting
     0     
